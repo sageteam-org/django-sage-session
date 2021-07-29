@@ -116,5 +116,8 @@ class Session(AbstractBaseSession):
 
     objects = SessionManager()
 
+    def __str__(self):
+        return f'Session for user {self.user}'
+
 
 from sage_session.db import UserSessionStore
