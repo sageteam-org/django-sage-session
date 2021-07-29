@@ -1,2 +1,4 @@
 Django>=3.2.3
 setuptools>=56.2.0
+netaddr
+geoip2==2.9.0

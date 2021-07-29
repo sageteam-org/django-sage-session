@@ -11,6 +11,9 @@ setup(
     download_url='https://github.com/sageteam-org/django-sage-cache/archive/refs/tags/0.1.0.tar.gz',
     keywords=['django', 'python', 'session', 'privacy', 'ip'],
     install_requires=[
-        'Django'
+        'Django',
+        'netaddr',
+        'geoip2==2.9.0',
+        'user-agents'
     ]
 )
