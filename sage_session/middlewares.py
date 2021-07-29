@@ -10,7 +10,6 @@ from netaddr import (
 
 from django.contrib.sessions.middleware import SessionMiddleware
 from django.utils.deprecation import MiddlewareMixin
-from django.conf import settings
 from django.http import HttpResponse
 from django.urls import reverse
 from django.shortcuts import redirect
@@ -18,9 +17,10 @@ from django.utils.encoding import force_text
 
 from sage_session.db import UserSessionStore
 from sage_session.services import analyse_user_agent, get_ip_location
+from sage_session import settings
 
-SESSION_IP_KEY = '_privacysessions_ip'
-SESSION_UA_KEY = '_privacysessions_ua'
+SESSION_IP_KEY = getattr(settings, 'PRIVACYSESSIONS_IP_KEY', '_privacysessions_ip')
+SESSION_UA_KEY = getattr(settings, 'PRIVACYSESSIONS_UA_KEY', '_privacysessions_ua')
 
 logger = logging.getLogger('privacysessions')
 
