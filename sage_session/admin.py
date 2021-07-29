@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
-from user_session.models import Session
+from sage_session.models import Session
 
 
 @admin.register(Session)

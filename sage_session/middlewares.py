@@ -11,6 +11,7 @@ from netaddr import (
 from django.contrib.sessions.middleware import SessionMiddleware
 from django.utils.deprecation import MiddlewareMixin
 from django.http import HttpResponse
+from django.conf import settings as dj_settings
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.utils.encoding import force_text
@@ -29,7 +30,7 @@ class UserSessionMiddleware(SessionMiddleware):
     """A middleware that adds ip and user_agent to the session store."""
 
     def process_request(self, request):
-        session_key = request.COOKIES.get(settings.SESSION_COOKIE_NAME, None)
+        session_key = request.COOKIES.get(dj_settings.SESSION_COOKIE_NAME, None)
         ip = request.META.get('REMOTE_ADDR', '')
         try:
             location = get_ip_location(ip)
