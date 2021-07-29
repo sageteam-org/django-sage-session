@@ -117,4 +117,4 @@ class Session(AbstractBaseSession):
     objects = SessionManager()
 
 
-from user_session.db import UserSessionStore
+from sage_session.db import UserSessionStore

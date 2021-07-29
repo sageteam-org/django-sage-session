@@ -118,4 +118,4 @@ class UserSessionStore(SessionStore):
         self.user_id = None
 
 
-from user_session.models import Session
+from sage_session.models import Session
